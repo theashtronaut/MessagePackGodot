@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AssemblyVersion>1.0.0</AssemblyVersion>
+        <FileVersion>1.0.0</FileVersion>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Title>MessagePack for Godot Engine</Title>
+        <Authors>ashtronaut</Authors>
+        <Description>Adds MessagePack for C# support for Godot Engine structs</Description>
+        <Copyright>© ashtronaut</Copyright>
+        <PackageProjectUrl>https://github.com/theashtronaut/MessagePackGodot</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/theashtronaut/MessagePackGodot</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>MsgPack MessagePack Serialization Godot</PackageTags>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <OutputPath>bin\Debug/</OutputPath>
+      <DebugType>embedded</DebugType>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <OutputPath>bin\Release/</OutputPath>
+      <DebugSymbols>true</DebugSymbols>
+      <DebugType>embedded</DebugType>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="GodotSharp" Version="4.0.4" />
+      <PackageReference Include="MessagePack" Version="2.5.124" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="MessagePackGodotTests\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="MessagePackGodotTests\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="MessagePackGodotTests\**" />
+    </ItemGroup>
+
+</Project>
