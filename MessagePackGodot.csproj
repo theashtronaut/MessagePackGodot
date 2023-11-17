@@ -15,6 +15,8 @@
         <RepositoryUrl>https://github.com/theashtronaut/MessagePackGodot</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageTags>MsgPack MessagePack Serialization Godot</PackageTags>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -45,4 +47,11 @@
       <None Remove="MessagePackGodotTests\**" />
     </ItemGroup>
 
+    <ItemGroup>
+        <None Include="README.md" Pack="true" PackagePath="\"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="LICENSE" Pack="true" PackagePath=""/>
+    </ItemGroup>
 </Project>
